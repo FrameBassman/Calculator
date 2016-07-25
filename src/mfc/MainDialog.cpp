@@ -49,13 +49,16 @@ END_MESSAGE_MAP()
 
 MainDialog::MainDialog(CWnd* pParent /*=NULL*/)
 	: CDialogEx(MainDialog::IDD, pParent)
+    , MainTextBox(0)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
 void MainDialog::DoDataExchange(CDataExchange* pDX)
 {
-	CDialogEx::DoDataExchange(pDX);
+    CDialogEx::DoDataExchange(pDX);
+    DDX_Text(pDX, IDC_EDIT_MAIN, MainTextBox);
+	DDV_MinMaxDouble(pDX, MainTextBox, -999999, 999999);
 }
 
 BEGIN_MESSAGE_MAP(MainDialog, CDialogEx)
@@ -149,4 +152,3 @@ HCURSOR MainDialog::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
 }
-
