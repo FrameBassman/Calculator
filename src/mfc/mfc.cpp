@@ -4,23 +4,23 @@
 
 #include "stdafx.h"
 #include "mfc.h"
-#include "MainDlg.h"
+#include "MainDialog.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
 
-// CCalculatorApp
+// CalculatorApp
 
-BEGIN_MESSAGE_MAP(CCalculatorApp, CWinApp)
+BEGIN_MESSAGE_MAP(CalculatorApp, CWinApp)
 	ON_COMMAND(ID_HELP, &CWinApp::OnHelp)
 END_MESSAGE_MAP()
 
 
-// CCalculatorApp construction
+// CalculatorApp construction
 
-CCalculatorApp::CCalculatorApp()
+CalculatorApp::CalculatorApp()
 {
 	// support Restart Manager
 	m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_RESTART;
@@ -30,14 +30,14 @@ CCalculatorApp::CCalculatorApp()
 }
 
 
-// The one and only CCalculatorApp object
+// The one and only CalculatorApp object
 
-CCalculatorApp theApp;
+CalculatorApp theApp;
 
 
-// CCalculatorApp initialization
+// CalculatorApp initialization
 
-BOOL CCalculatorApp::InitInstance()
+BOOL CalculatorApp::InitInstance()
 {
 	// InitCommonControlsEx() is required on Windows XP if an application
 	// manifest specifies use of ComCtl32.dll version 6 or later to enable
@@ -70,7 +70,7 @@ BOOL CCalculatorApp::InitInstance()
 	// such as the name of your company or organization
 	SetRegistryKey(_T("Local AppWizard-Generated Applications"));
 
-	CMainDlg dlg;
+	MainDialog dlg;
 	m_pMainWnd = &dlg;
 	INT_PTR nResponse = dlg.DoModal();
 	if (nResponse == IDOK)
@@ -94,10 +94,6 @@ BOOL CCalculatorApp::InitInstance()
 	{
 		delete pShellManager;
 	}
-
-#ifndef _AFXDLL
-	ControlBarCleanUp();
-#endif
 
 	// Since the dialog has been closed, return FALSE so that we exit the
 	//  application, rather than start the application's message pump.

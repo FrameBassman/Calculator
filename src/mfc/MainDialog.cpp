@@ -1,10 +1,10 @@
 
-// MainDlg.cpp : implementation file
+// MainDialog.cpp : implementation file
 //
 
 #include "stdafx.h"
 #include "mfc.h"
-#include "MainDlg.h"
+#include "MainDialog.h"
 #include "afxdialogex.h"
 
 #ifdef _DEBUG
@@ -20,9 +20,7 @@ public:
 	CAboutDlg();
 
 // Dialog Data
-#ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_ABOUTBOX };
-#endif
 
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
@@ -32,7 +30,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 };
 
-CAboutDlg::CAboutDlg() : CDialogEx(IDD_ABOUTBOX)
+CAboutDlg::CAboutDlg() : CDialogEx(CAboutDlg::IDD)
 {
 }
 
@@ -45,31 +43,31 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// CMainDlg dialog
+// MainDialog dialog
 
 
 
-CMainDlg::CMainDlg(CWnd* pParent /*=NULL*/)
-	: CDialogEx(IDD_MFC_DIALOG, pParent)
+MainDialog::MainDialog(CWnd* pParent /*=NULL*/)
+	: CDialogEx(MainDialog::IDD, pParent)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
-void CMainDlg::DoDataExchange(CDataExchange* pDX)
+void MainDialog::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
 }
 
-BEGIN_MESSAGE_MAP(CMainDlg, CDialogEx)
+BEGIN_MESSAGE_MAP(MainDialog, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 END_MESSAGE_MAP()
 
 
-// CMainDlg message handlers
+// MainDialog message handlers
 
-BOOL CMainDlg::OnInitDialog()
+BOOL MainDialog::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
@@ -103,7 +101,7 @@ BOOL CMainDlg::OnInitDialog()
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
-void CMainDlg::OnSysCommand(UINT nID, LPARAM lParam)
+void MainDialog::OnSysCommand(UINT nID, LPARAM lParam)
 {
 	if ((nID & 0xFFF0) == IDM_ABOUTBOX)
 	{
@@ -120,7 +118,7 @@ void CMainDlg::OnSysCommand(UINT nID, LPARAM lParam)
 //  to draw the icon.  For MFC applications using the document/view model,
 //  this is automatically done for you by the framework.
 
-void CMainDlg::OnPaint()
+void MainDialog::OnPaint()
 {
 	if (IsIconic())
 	{
@@ -147,7 +145,7 @@ void CMainDlg::OnPaint()
 
 // The system calls this function to obtain the cursor to display while the user drags
 //  the minimized window.
-HCURSOR CMainDlg::OnQueryDragIcon()
+HCURSOR MainDialog::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
 }

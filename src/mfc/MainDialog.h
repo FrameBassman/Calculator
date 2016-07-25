@@ -1,21 +1,19 @@
 
-// MainDlg.h : header file
+// MainDialog.h : header file
 //
 
 #pragma once
 
 
-// CMainDlg dialog
-class CMainDlg : public CDialogEx
+// MainDialog dialog
+class MainDialog : public CDialogEx
 {
 // Construction
 public:
-	CMainDlg(CWnd* pParent = NULL);	// standard constructor
+	MainDialog(CWnd* pParent = NULL);	// standard constructor
 
 // Dialog Data
-#ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_MFC_DIALOG };
-#endif
 
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support

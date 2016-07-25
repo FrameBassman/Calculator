@@ -11,14 +11,14 @@
 #include "resource.h"		// main symbols
 
 
-// CCalculatorApp:
+// CalculatorApp:
 // See mfc.cpp for the implementation of this class
 //
 
-class CCalculatorApp : public CWinApp
+class CalculatorApp : public CWinApp
 {
 public:
-	CCalculatorApp();
+	CalculatorApp();
 
 // Overrides
 public:
@@ -29,4 +29,4 @@ public:
 	DECLARE_MESSAGE_MAP()
 };
 
-extern CCalculatorApp theApp;
+extern CalculatorApp theApp;

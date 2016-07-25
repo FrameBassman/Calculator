@@ -1,26 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mfc", "mfc\mfc.vcxproj", "{6CBCAFF6-0C30-4E62-AAEB-EB999AC215F2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mfc", "mfc\mfc.vcxproj", "{A70FE339-A9A8-4E31-910F-F8B2651BF61A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6CBCAFF6-0C30-4E62-AAEB-EB999AC215F2}.Debug|x64.ActiveCfg = Debug|x64
-		{6CBCAFF6-0C30-4E62-AAEB-EB999AC215F2}.Debug|x64.Build.0 = Debug|x64
-		{6CBCAFF6-0C30-4E62-AAEB-EB999AC215F2}.Debug|x86.ActiveCfg = Debug|Win32
-		{6CBCAFF6-0C30-4E62-AAEB-EB999AC215F2}.Debug|x86.Build.0 = Debug|Win32
-		{6CBCAFF6-0C30-4E62-AAEB-EB999AC215F2}.Release|x64.ActiveCfg = Release|x64
-		{6CBCAFF6-0C30-4E62-AAEB-EB999AC215F2}.Release|x64.Build.0 = Release|x64
-		{6CBCAFF6-0C30-4E62-AAEB-EB999AC215F2}.Release|x86.ActiveCfg = Release|Win32
-		{6CBCAFF6-0C30-4E62-AAEB-EB999AC215F2}.Release|x86.Build.0 = Release|Win32
+		{A70FE339-A9A8-4E31-910F-F8B2651BF61A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A70FE339-A9A8-4E31-910F-F8B2651BF61A}.Debug|Win32.Build.0 = Debug|Win32
+		{A70FE339-A9A8-4E31-910F-F8B2651BF61A}.Release|Win32.ActiveCfg = Release|Win32
+		{A70FE339-A9A8-4E31-910F-F8B2651BF61A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

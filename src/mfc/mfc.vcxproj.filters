@@ -18,7 +18,7 @@
     <ClInclude Include="mfc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainDlg.h">
+    <ClInclude Include="MainDialog.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
@@ -35,7 +35,7 @@
     <ClCompile Include="mfc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainDlg.cpp">
+    <ClCompile Include="MainDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
