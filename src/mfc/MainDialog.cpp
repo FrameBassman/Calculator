@@ -11,7 +11,6 @@
 #define new DEBUG_NEW
 #endif
 
-
 // CAboutDlg dialog used for App About
 
 class CAboutDlg : public CDialogEx
@@ -45,26 +44,27 @@ END_MESSAGE_MAP()
 
 // MainDialog dialog
 
-
-
 MainDialog::MainDialog(CWnd* pParent /*=NULL*/)
 	: CDialogEx(MainDialog::IDD, pParent)
-    , MainTextBox(0)
+	, MainTextbox(_T(""))
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+	FirstOperand = NULL;
+	SecondOperand = NULL;
 }
 
 void MainDialog::DoDataExchange(CDataExchange* pDX)
 {
-    CDialogEx::DoDataExchange(pDX);
-    DDX_Text(pDX, IDC_EDIT_MAIN, MainTextBox);
-	DDV_MinMaxDouble(pDX, MainTextBox, -999999, 999999);
+	CDialogEx::DoDataExchange(pDX);
+	DDX_Text(pDX, IDC_EDIT_MAIN, MainTextbox);
 }
 
 BEGIN_MESSAGE_MAP(MainDialog, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_MFCBUTTON_ADD, &MainDialog::OnAddButton)
+	ON_BN_CLICKED(IDC_MFCBUTTON_EQ, &MainDialog::OnEqButton)
 END_MESSAGE_MAP()
 
 
@@ -98,7 +98,7 @@ BOOL MainDialog::OnInitDialog()
 	//  when the application's main window is not a dialog
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
-
+	UpdateData(FALSE);
 	// TODO: Add extra initialization here
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
@@ -151,4 +151,42 @@ void MainDialog::OnPaint()
 HCURSOR MainDialog::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
+}
+
+void MainDialog::OnAddButton()
+{
+	UpdateData(TRUE);
+	FirstOperand = _tstof(MainTextbox);
+	PreviousOperation = CalculatorOperation::Add;
+}
+
+void MainDialog::OnEqButton()
+{
+	double result;
+
+	UpdateData(TRUE);
+	SecondOperand = _tstof(MainTextbox);
+
+
+	switch (PreviousOperation)
+	{
+	case CalculatorOperation::Add:
+		result = FirstOperand + SecondOperand;
+		break;
+	case CalculatorOperation::Sub:
+		result = FirstOperand - SecondOperand;
+		break;
+	case CalculatorOperation::Mul:
+		result = FirstOperand * SecondOperand;
+		break;
+	case CalculatorOperation::Div:
+		result = FirstOperand / SecondOperand;
+		break;
+	default:
+		break;
+	};
+
+	MainTextbox.Format(_T("%f"), result);
+
+	UpdateData(FALSE);
 }

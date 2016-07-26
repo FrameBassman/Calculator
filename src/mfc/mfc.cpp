@@ -75,4 +75,3 @@ BOOL CalculatorApp::InitInstance()
     dlg.DoModal();
 	return FALSE;
 }
-

@@ -3,6 +3,7 @@
 //
 
 #pragma once
+#include "afxwin.h"
 
 
 // MainDialog dialog
@@ -30,5 +31,11 @@ protected:
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
 public:
-    double MainTextBox;
+	enum CalculatorOperation { Add, Sub, Mul, Div };
+	double FirstOperand;
+	double SecondOperand;
+	afx_msg void OnAddButton();
+	afx_msg void OnEqButton();
+	CString MainTextbox;
+	CalculatorOperation PreviousOperation;
 };
